@@ -1,4 +1,5 @@
 from locust import HttpLocust, TaskSet
+from locust.contrib.fasthttp import FastHttpLocust
 import json
 from faker import Factory
 
@@ -143,7 +144,7 @@ class UserBehavior(TaskSet):
         logout(self)
 
 
-class WebsiteUser(HttpLocust):
+class WebsiteUser(FastHttpLocust):
     task_set = UserBehavior
     min_wait = 5000
     max_wait = 10000
