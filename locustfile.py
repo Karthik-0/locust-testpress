@@ -106,7 +106,7 @@ def start_exam(l):
         questions_endpoint.format(l.attempt_id) + "?bonus=False&page=1",
         headers={"X-CSRFToken": l.csrftoken, "Referer": l.parent.host + "/login/"},
     )
-    total_page = r.json().get("count") / r.json().get("per_page")
+    total_page = r.json().get("count") // r.json().get("per_page")
     usas = r.json().get("results")
     if r.json().get("count") % r.json().get("per_page"):
         total_page += 1
