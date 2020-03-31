@@ -99,7 +99,7 @@ def start_exam(l):
         headers={
             "X-CSRFToken": l.csrftoken,
             "Referer": l.parent.host + "/login/",
-            "cookie": json.dumps(l.locust.client.cookies.get_dict()),
+            "cookie": json.dumps(l.locust.client.cookiejar._cookies),
         },
     )
     l.attempt_id = r.json().get("id")
@@ -126,7 +126,7 @@ def start_exam(l):
 
 def take_exam(l):
     for usa_id, usa_data in getattr(l.usa_dict, "iteritems", l.usa_dict.items)():
-        l.client.put(usa_endpoint.format(l.attempt_id, usa_id), usa_data)
+        l.client.put(usa_endpoint.format(l.attempt_id, usa_id), data=json.dumps(usa_data), headers={"Content-Type": "application/json"})
 
 
 class UserBehavior(TaskSet):
@@ -144,7 +144,7 @@ class UserBehavior(TaskSet):
         logout(self)
 
 
-class WebsiteUser(HttpLocust):
+class WebsiteUser(FastHttpLocust):
     task_set = UserBehavior
     min_wait = 5000
     max_wait = 10000
