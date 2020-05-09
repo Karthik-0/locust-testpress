@@ -130,7 +130,7 @@ def take_exam(l):
 
 
 class UserBehavior(TaskSet):
-    tasks = {take_exam: 10}
+    tasks = {take_exam: 200}
     csrftoken = ""
     attempt_id = 0
     usa_dict = {}
