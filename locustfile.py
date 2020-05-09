@@ -3,17 +3,17 @@ from locust.contrib.fasthttp import FastHttpLocust
 import json
 from faker import Factory
 
-languages_endpoint = "/api/v2.3/exams/load-test/languages/"  # Exam slug needs to changed accordingly
-exam_endpoint = "/api/v2.2/exams/load-test/attempts/"  # Exam slug needs to changed accordingly
+languages_endpoint = "/api/v2.3/exams/load-testing/languages/"  # Exam slug needs to changed accordingly
+exam_endpoint = "/api/v2.2/exams/load-testing/attempts/"  # Exam slug needs to changed accordingly
 questions_endpoint = "/api/v2.2/attempts/{}/questions/"
 usa_endpoint = "/api/v2.2/attempts/{}/questions/{}/"
 
 # Json need to be changed according to exam
 exam_data = {
     "exam": {
-        "url": "https://demo.testpress.in/api/v2.2/exams/load-test/",
+        "url": "https://demo.testpress.in/api/v2.2/exams/load-testing/",
         "id": 795,
-        "title": "load-test",
+        "title": "load-testing",
         "description": "",
         "start_date": "2019-09-18T22:08:51+05:30",
         "end_date": None,
@@ -26,13 +26,13 @@ exam_data = {
         "max_retakes": -1,
         "enable_ranks": False,
         "rank_publishing_date": None,
-        "attempts_url": "https://demo.testpress.in/api/v2.2/exams/load-test/attempts/",
+        "attempts_url": "https://demo.testpress.in/api/v2.2/exams/load-testing/attempts/",
         "attempts_count": 0,
         "paused_attempts_count": 0,
         "allow_pdf": False,
         "allow_question_pdf": False,
         "created": "2019-09-18T16:39:14.788376Z",
-        "slug": "load-test",
+        "slug": "load-testing",
         "variable_mark_per_question": False,
         "show_answers": True,
         "comments_count": 0,
