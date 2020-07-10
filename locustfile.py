@@ -3,8 +3,8 @@ from locust.contrib.fasthttp import FastHttpLocust
 import json
 from faker import Factory
 
-languages_endpoint = "/api/v2.3/exams/load-testing/languages/"  # Exam slug needs to changed accordingly
-exam_endpoint = "/api/v2.2/exams/load-testing/attempts/"  # Exam slug needs to changed accordingly
+languages_endpoint = "/api/v2.3/exams/load-test/languages/"  # Exam slug needs to changed accordingly
+exam_endpoint = "/api/v2.2/exams/load-test/attempts/"  # Exam slug needs to changed accordingly
 questions_endpoint = "/api/v2.2/attempts/{}/questions/"
 usa_endpoint = "/api/v2.2/attempts/{}/questions/{}/"
 
