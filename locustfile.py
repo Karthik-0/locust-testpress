@@ -125,7 +125,10 @@ def start_exam(l):
 
 
 def take_exam(l):
+    import time, random
     for usa_id, usa_data in getattr(l.usa_dict, "iteritems", l.usa_dict.items)():
+        random_time = random.randint(30, 120)
+        time.sleep(random_time)
         l.client.put(usa_endpoint.format(l.attempt_id, usa_id), data=json.dumps(usa_data), headers={"Content-Type": "application/json"})
 
 
