@@ -10,7 +10,7 @@ greenlet==0.4.15
 idna==2.9
 itsdangerous==1.1.0
 Jinja2==2.11.1
-locust==0.0
+locust==1.1.1
 locustio==0.14.5
 MarkupSafe==1.1.1
 msgpack==1.0.0
